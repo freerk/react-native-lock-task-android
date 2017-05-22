@@ -54,7 +54,7 @@ public class RNLockTaskAndroidModule extends ReactContextBaseJavaModule {
 
   @Override
   public String getName() {
-    return "LockTaskAndroid";
+    return "RNLockTaskAndroid";
   }
 
 }
