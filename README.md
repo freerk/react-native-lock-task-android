@@ -42,6 +42,8 @@ LockTaskAndroid.startLockTask();
 ```
 
 # A more robust toggle example
+**isLockTaskOn** is an async function so that checks whether task is currently being pinned.
+
 ```javascript
 import { LockTaskAndroid } from 'react-native-lock-task-android';
 
