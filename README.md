@@ -27,12 +27,32 @@
       compile project(':react-native-lock-task-android')
   	```
 
+## Minimum API Level
+The Lock Task(task pinning) API only works from API 21(Lollipop) onwards as a result of that, this module has a minimum API target of 21 so for your project to compile properly it will also need a minimum API target of 21. This might change in the future if I can find something comparable to use for <21.
 
-## Usage
+## Starting/Stopping Lock Task
 ```javascript
-import RNLockTaskAndroid from 'react-native-lock-task-android';
+import { LockTaskAndroid } from 'react-native-lock-task-android';
 
-// TODO: What to do with the module?
-RNLockTaskAndroid;
+// START
+LockTaskAndroid.stopLockTask();
+
+// STOP
+LockTaskAndroid.startLockTask();
 ```
-  
+
+# A more robust toggle example
+```javascript
+import { LockTaskAndroid } from 'react-native-lock-task-android';
+
+toggleLockTask = async() => {
+    let active = await LockTaskAndroid.isLockTaskOn();
+    if (active) {
+      LockTaskAndroid.stopLockTask();
+    } else {
+      LockTaskAndroid.startLockTask();
+    }
+};
+
+toggleLockTask();
+```
