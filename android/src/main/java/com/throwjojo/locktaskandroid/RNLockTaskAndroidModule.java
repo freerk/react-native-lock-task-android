@@ -45,6 +45,9 @@ public class RNLockTaskAndroidModule extends ReactContextBaseJavaModule {
   // Checks if lock task mode is active or not
   private boolean isLockTaskModeActive() {
     ActivityManager activityManager = (ActivityManager) reactContext.getSystemService(Context.ACTIVITY_SERVICE);
+    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT){
+      return false;
+    }
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
       return (activityManager.getLockTaskModeState() != ActivityManager.LOCK_TASK_MODE_NONE);
     } else {
