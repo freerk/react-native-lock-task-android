@@ -22,4 +22,4 @@ class LockTaskAndroid {
 
 }
 
-module.exports.LockTaskAndroid = LockTaskAndroid;
+export default LockTaskAndroid;
