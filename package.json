@@ -12,7 +12,4 @@
   ],
   "author": "",
   "license": "",
-  "peerDependencies": {
-    "react-native": "^0.64.2"
-  }
 }
